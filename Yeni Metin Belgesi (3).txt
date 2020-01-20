@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/icon192.png">
+    <title>Quiz 2</title>
+
+  <style>
+    body { margin: 12px; }
+    div  { 
+      width: 100px;
+      margin: 20px; 
+      font: 20px serif;
+      font-weight: bold;
+    }
+    pre { 
+      font: 13px monospace;
+      color: blue; 
+      margin-top: 10px; 
+      margin-bottom: 20px; 
+    }
+  </style>
+</head>
+
+<body>
+
+<div id=e>Solution</div>
+
+Consider the code piece defined below.
+<pre id=p0>
+let b = { color:['black', 'pink'], transform:['scale(1)', 'scale(2)']}
+e.animate(b, 1500)  //e is an HTMLElement
+</pre>
+
+a) Explain what it does. 
+<pre id=p1>
+Animation within 1.5 seconds:
+text color of e is changed from black to pink
+x, y scale of e from normal to twice as large
+</pre>
+
+b) Draw an object diagram for b.
+<pre id=p2>
+(bunu sadece iki kişi tam yaptı: Emine ve Elanur)
+</pre>
+
+c) Write down the type and the value of   b.transform[0] 
+<pre id=p3>
+string  'scale(1)'
+</pre>
+
+d) Do the same animation using CSS.
+<pre id=p4>
+e.style.transition = 'all 1.5s'
+e.style.color      = 'pink'
+e.style.transform  = 'scale(2)'
+</pre>
+
+e) Modify the code so that the scale factor is back to its initial value after 3 seconds.
+<pre id=p5>
+b.transform.push('scale(1)')  //Samed Özkan
+e.animate(b, 3000)
+</pre>
+
+f) Show how to center e using CSS. 
+<pre id=p6>
+e.style.position = 'fixed'  //or 'absolute' 
+e.style.left  = '30%'
+e.style.width = '40%'
+</pre>
+
+g) Put the key-value pairs in b into Map m. How do you get b.color[1] from m?
+<pre id=p7>
+let m = new Map()
+for (k in b) m.set(k, b[k])
+//m has only two entries
+m.get('color')[1]
+</pre>
+
+<i>Dev tools içinde bunların hepsini deneyin</i>
+
+<script>
+"use strict";
+e.innerText = document.title
+var b = { color:['black', 'pink'], transform:['scale(1)', 'scale(2)']}
+document.onclick = (evt) => { evt.target.animate(b, 1500) }
+e.click()
+</script>
+
+</body>
+</html>
