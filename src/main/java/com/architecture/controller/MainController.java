@@ -67,7 +67,11 @@ import java.io.IOException;
 
 
   @PostMapping("/sendMail")
-    public String sendMail( @RequestParam(required=false,name="name") String name, @RequestParam(required=false,name="subject") String subject, @RequestParam(required=false,name="mail") String mail, @RequestParam(required=false,name="phone") String phone, @RequestParam(required=false,name="text") String text)
+    public String sendMail( @RequestParam(required=false,name="name") String name,
+                            @RequestParam(required=false,name="subject") String subject,
+                            @RequestParam(required=false,name="mail") String mail,
+                            @RequestParam(required=false,name="phone") String phone,
+                            @RequestParam(required=false,name="text") String text)
             throws MessagingException, IOException {
 
 
