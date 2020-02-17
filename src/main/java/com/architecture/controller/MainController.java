@@ -62,16 +62,33 @@ import java.io.IOException;
         return modelAndView;
     }
 
+
+
+    @RequestMapping("/service.html")
+    public ModelAndView service() {
+
+        ModelAndView modelAndView = new ModelAndView("service");
+
+        return modelAndView;
+    }
+
+    @RequestMapping("/projectdetails.html")
+    public ModelAndView projectdetails() {
+
+        ModelAndView modelAndView = new ModelAndView("projectdetails");
+
+        return modelAndView;
+    }
+
+
+
+
    @Autowired
     public JavaMailSender javaMailSender;
 
 
   @PostMapping("/sendMail")
-    public String sendMail( @RequestParam(required=false,name="name") String name,
-                            @RequestParam(required=false,name="subject") String subject,
-                            @RequestParam(required=false,name="mail") String mail,
-                            @RequestParam(required=false,name="phone") String phone,
-                            @RequestParam(required=false,name="text") String text)
+    public String sendMail( @RequestParam(required=false,name="name") String name, @RequestParam(required=false,name="subject") String subject, @RequestParam(required=false,name="mail") String mail, @RequestParam(required=false,name="phone") String phone, @RequestParam(required=false,name="text") String text)
             throws MessagingException, IOException {
 
 
